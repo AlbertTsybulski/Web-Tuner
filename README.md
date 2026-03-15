@@ -4,15 +4,15 @@ A Chromium extension that detects the pitch currently playing in your browser an
 
 ## Features
 
-- 🎵 Real-time pitch detection from browser audio
-- 🎼 Accurate note identification (e.g., A4, C#5)
-- 📊 Frequency display in Hz
-- 🎯 Tuning accuracy in cents (±50 cents range)
-- 📈 Visual graph showing tuning offset:
+- Real-time pitch detection from browser audio
+- Accurate note identification (e.g., A4, C#5)
+- Frequency display in Hz
+- Tuning accuracy in cents (±50 cents range)
+- Visual graph showing tuning offset:
   - Center line (green) = perfectly in tune (0 cents)
   - Above center (red) = sharp (too high)
   - Below center (blue) = flat (too low)
-- ✅ In-tune indicator when within ±5 cents
+- In-tune indicator when within ±5 cents
 
 ## Installation
 
