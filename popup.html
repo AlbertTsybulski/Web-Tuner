@@ -1,39 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Web Tuner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Web Tuner</h1>
-    
-    <div id="status" class="status">Click "Start" to begin tuning</div>
-    
-    <button id="startBtn" class="btn">Start Tuner</button>
-    <button id="stopBtn" class="btn" style="display: none;">Stop Tuner</button>
-    
-    <div id="tuner" class="tuner-display" style="display: none;">
-      <div class="note-display">
-        <div class="note-label">Note:</div>
-        <div id="note" class="note">-</div>
-      </div>
-      
-      <div class="frequency-display">
-        <div class="frequency-label">Frequency:</div>
-        <div id="frequency" class="frequency">- Hz</div>
-      </div>
-      
-      <div class="cents-display">
-        <div class="cents-label">Tuning:</div>
-        <div id="cents" class="cents">-</div>
-      </div>
-      
-      <canvas id="tunerGraph" width="400" height="100"></canvas>
+  <div class="app">
+    <div class="glow glow-a"></div>
+    <div class="glow glow-b"></div>
+
+    <header class="hero">
+      <p class="eyebrow">Web Tuner</p>
+      <h1 class="headline">Tune browser audio with a clean, fast pitch workflow.</h1>
+      <p class="subhead">Capture tab audio, detect the note, and see how sharp or flat you are in real time.</p>
+    </header>
+
+    <section class="metrics" aria-label="Live readings">
+      <article class="metric-card">
+        <span class="metric-label">Note</span>
+        <span id="note" class="metric-value">—</span>
+      </article>
+      <article class="metric-card">
+        <span class="metric-label">Frequency</span>
+        <span id="frequency" class="metric-value">— Hz</span>
+      </article>
+      <article class="metric-card">
+        <span class="metric-label">Tuning</span>
+        <span id="cents" class="metric-value">—</span>
+      </article>
+    </section>
+
+    <div class="panels">
+      <section class="panel controls-panel">
+        <div class="panel-header">
+          <div>
+            <p class="panel-eyebrow">Controls</p>
+            <h2 class="panel-title">Start listening</h2>
+          </div>
+          <button id="resetBtn" class="btn-ghost" type="button" hidden>Reset</button>
+        </div>
+
+        <div id="status" class="status-card">
+          <span class="status-dot" aria-hidden="true"></span>
+          <p class="status-text">Click start to begin tuning this tab.</p>
+        </div>
+
+        <div class="action-row">
+          <button id="startBtn" class="btn-primary" type="button">Start Tuner</button>
+          <button id="stopBtn" class="btn-secondary" type="button" hidden>Stop</button>
+        </div>
+      </section>
+
+      <section class="panel viz-panel">
+        <div class="panel-header">
+          <div>
+            <p class="panel-eyebrow">Visualization</p>
+            <h2 class="panel-title">Tuning offset</h2>
+          </div>
+        </div>
+
+        <div class="graph-shell">
+          <canvas id="tunerGraph" width="400" height="140" aria-label="Tuning offset graph"></canvas>
+          <div class="graph-legend">
+            <span class="legend-item legend-sharp">Sharp</span>
+            <span class="legend-item legend-tune">In tune</span>
+            <span class="legend-item legend-flat">Flat</span>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
-  
+
   <script src="popup.js"></script>
 </body>
 </html>
