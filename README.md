@@ -6,23 +6,35 @@ A Chromium extension that detects the pitch currently playing in your browser an
 
 - Real-time pitch detection from browser audio
 - Accurate note identification (e.g., A4, C#5)
-- Frequency display in Hz
+- Live metric cards for note, frequency (Hz), and tuning offset
 - Tuning accuracy in cents (±50 cents range)
+- Dark, card-based popup UI with a controls panel and visualization panel
 - Visual graph showing tuning offset:
   - Center line (green) = perfectly in tune (0 cents)
-  - Above center (red) = sharp (too high)
-  - Below center (blue) = flat (too low)
-- In-tune indicator when within ±5 cents
+  - Above center (coral) = sharp (too high)
+  - Below center (cyan) = flat (too low)
+- Color-coded tuning readout and in-tune indicator when within ±5 cents
 
 ## Installation
 
-### Load as Unpacked Extension (Developer Mode)
+### From GitHub Releases
+
+1. Open the [GitHub Releases](https://github.com/AlbertTsybulski/Web-Tuner/releases) page for this repository
+2. Download the latest packed release (`.zip`)
+3. Extract the archive to a folder on your computer
+4. Open Chrome/Chromium and go to `chrome://extensions/`
+5. Enable **Developer mode** (toggle in the top-right corner)
+6. Click **Load unpacked**
+7. Select the extracted extension folder
+8. The Web Tuner icon should appear in your browser toolbar
+
+### Load from Source (Developer Mode)
 
 1. Download or clone this repository
 2. Open Chrome/Chromium browser
 3. Navigate to `chrome://extensions/`
-4. Enable "Developer mode" (toggle in top-right corner)
-5. Click "Load unpacked"
+4. Enable **Developer mode** (toggle in top-right corner)
+5. Click **Load unpacked**
 6. Select the `Web-Tuner` directory
 7. The extension icon should appear in your browser toolbar
 
@@ -30,20 +42,21 @@ A Chromium extension that detects the pitch currently playing in your browser an
 
 1. **Play audio** in any browser tab (YouTube, Spotify, local audio file, etc.)
 2. **Click the Web Tuner extension icon** in the toolbar
-3. **Click "Start Tuner"** button
+3. **Click "Start Tuner"** in the controls panel
 4. The extension will request permission to capture the tab's audio
-5. Once granted, the tuner will display:
-   - Current note being played
-   - Frequency in Hz
-   - Tuning offset in cents
-   - Visual graph showing how sharp or flat the note is
+5. Once granted, the popup shows live readings in the metric cards at the top:
+   - **Note** — current pitch (e.g., A4, C#5)
+   - **Frequency** — detected frequency in Hz
+   - **Tuning** — cents offset, color-coded as sharp, flat, or in tune
+6. The **Visualization** panel shows a tuning-offset graph with the current reading
+7. Click **Stop** or **Reset** to end capture and clear the display
 
 ### Tips
 
 - Make sure audio is actually playing in the tab before starting the tuner
 - For best results, use clear, sustained single notes (not chords)
 - The tuner works best with frequencies between 80 Hz and 2000 Hz
-- If no signal is detected, the display will show "No signal"
+- If no signal is detected, the tuning card will show "No signal" and the graph will show "Waiting for signal"
 
 ### Testing with test.html
 
