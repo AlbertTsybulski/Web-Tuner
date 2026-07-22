@@ -20,13 +20,13 @@ A Chromium extension that detects the pitch currently playing in your browser an
 ### From GitHub Releases
 
 1. Open the [GitHub Releases](https://github.com/AlbertTsybulski/Web-Tuner/releases) page for this repository
-2. Download the latest packed release (`.zip`)
-3. Extract the archive to a folder on your computer
-4. Open Chrome/Chromium and go to `chrome://extensions/`
-5. Enable **Developer mode** (toggle in the top-right corner)
-6. Click **Load unpacked**
-7. Select the extracted extension folder
-8. The Web Tuner icon should appear in your browser toolbar
+2. Download the latest `.crx` file
+3. Open Chrome/Chromium and go to `chrome://extensions/`
+4. Enable **Developer mode** (toggle in the top-right corner)
+5. Drag and drop the downloaded `.crx` file anywhere onto the `chrome://extensions/` page
+6. Confirm the prompt to add the extension
+7. The Web Tuner icon should appear in your browser toolbar
+
 
 ### Load from Source (Developer Mode)
 
